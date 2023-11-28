@@ -32,9 +32,13 @@ public class NetworkRig : MonoBehaviour
         if(this.photonView.IsMine)
         {
             this.transform.position = this.hardwareRig.transform.position;
+            this.transform.rotation = this.hardwareRig.transform.rotation;
             this.headset.transform.position = this.hardwareRig.headset.transform.position;
+            this.headset.transform.localRotation = this.hardwareRig.headset.transform.localRotation;
             this.leftHand.transform.position = this.hardwareRig.leftHand.transform.position;
+            this.leftHand.transform.localRotation = this.hardwareRig.leftHand.transform.localRotation;
             this.rightHand.transform.position = this.hardwareRig.rightHand.transform.position;
+            this.rightHand.transform.localRotation = this.hardwareRig.rightHand.transform.localRotation;
         }
     }
 
