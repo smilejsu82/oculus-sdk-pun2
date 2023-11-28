@@ -154,10 +154,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2700379544279315864}
   - {fileID: 7442799251039013641}
-  - {fileID: 7355313145203433126}
   - {fileID: 9132688632962976275}
   - {fileID: 3970410791720368461}
-  - {fileID: 9177517887979180964}
   - {fileID: 407448245548505350}
   - {fileID: 9082034322273507471}
   sceneViewId: 0
@@ -469,6 +467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 11477634, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -613,6 +615,10 @@ PrefabInstance:
     - target: {fileID: 414912, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
