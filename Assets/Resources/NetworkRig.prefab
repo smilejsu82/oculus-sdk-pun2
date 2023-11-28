@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c1cab98cd202248a854ba7d2df155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 8774185224345455482}
   anim: {fileID: 5346801513824118323}
 --- !u!114 &407448245548505350
 MonoBehaviour:
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c1cab98cd202248a854ba7d2df155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 8774185224345455482}
   anim: {fileID: 5485765363237573445}
 --- !u!114 &9132688632962976275
 MonoBehaviour:
