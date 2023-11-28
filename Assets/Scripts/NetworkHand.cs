@@ -7,7 +7,7 @@ public class NetworkHand : MonoBehaviour, IPunObservable
 {
     [SerializeField] private Animator anim;
     private float receiveFlex;
-    private float receivePose;
+    private int receivePose;
     private float receivePinch;
     
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -15,13 +15,13 @@ public class NetworkHand : MonoBehaviour, IPunObservable
         if (stream.IsWriting)
         {
             stream.SendNext(this.anim.GetFloat("Flex"));
-            stream.SendNext(this.anim.GetFloat("Pose"));
+            stream.SendNext(this.anim.GetInteger("Pose"));
             stream.SendNext(this.anim.GetFloat("Pinch"));
         }
         else
         {
             this.receiveFlex = (float)stream.ReceiveNext();
-            this.receivePose = (float)stream.ReceiveNext();
+            this.receivePose = (int)stream.ReceiveNext();
             this.receivePinch = (float)stream.ReceiveNext();
             
             Debug.LogFormat("{0}, {1}, {2}", this.receiveFlex, this.receivePose, this.receivePinch);
