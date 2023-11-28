@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2362237291736939161}
   - component: {fileID: 9177517887979180964}
   - component: {fileID: 407448245548505350}
+  - component: {fileID: 9082034322273507471}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 8774185224345455482}
   anim: {fileID: 5346801513824118323}
+  rig: {fileID: 4578343064195786106}
+  side: 3
 --- !u!114 &407448245548505350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +67,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &9082034322273507471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129767330182410771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9f8ef0cb99ebf4ca48be72ff6ef82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 0}
 --- !u!1 &528577903502304492
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +156,10 @@ MonoBehaviour:
   - {fileID: 7442799251039013641}
   - {fileID: 7355313145203433126}
   - {fileID: 9132688632962976275}
+  - {fileID: 3970410791720368461}
   - {fileID: 9177517887979180964}
   - {fileID: 407448245548505350}
+  - {fileID: 9082034322273507471}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -298,6 +316,7 @@ GameObject:
   - component: {fileID: 6015552073432249128}
   - component: {fileID: 7355313145203433126}
   - component: {fileID: 9132688632962976275}
+  - component: {fileID: 3970410791720368461}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -335,6 +354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 8774185224345455482}
   anim: {fileID: 5485765363237573445}
+  rig: {fileID: 4578343064195786106}
+  side: 2
 --- !u!114 &9132688632962976275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +372,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3970410791720368461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403696579687089429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9f8ef0cb99ebf4ca48be72ff6ef82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 0}
 --- !u!1 &9084283368366994331
 GameObject:
   m_ObjectHideFlags: 0
