@@ -16,7 +16,7 @@ public interface IHandRepresentation
 
 }
 
-public class NetworkHand : MonoBehaviour //, IPunObservable
+public class NetworkHand : MonoBehaviour, IPunObservable
 {
     [SerializeField] private PhotonView photonView;
     [SerializeField] private Animator anim;
