@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NetworkRig : MonoBehaviour
 {
-    private PhotonView photonView;
+    public PhotonView photonView;
     public HardwareRig hardwareRig;
     public NetworkHead headset;
     public NetworkHand leftHand;
@@ -13,7 +13,7 @@ public class NetworkRig : MonoBehaviour
 
     private void Awake()
     {
-        this.photonView = GetComponent<PhotonView>();
+        
     }
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class NetworkRig : MonoBehaviour
     {
         if (photonView.IsMine) {
             this.hardwareRig = FindObjectOfType<HardwareRig>();
+            this.hardwareRig.networkRig = this;
             if (this.hardwareRig == null) {
                 Debug.LogError("Missing HardwareRig in the Scene");
             }
@@ -40,6 +41,19 @@ public class NetworkRig : MonoBehaviour
             this.rightHand.transform.position = this.hardwareRig.rightHand.transform.position;
             this.rightHand.transform.localRotation = this.hardwareRig.rightHand.transform.localRotation;
         }
+    }
+    
+    
+    [PunRPC]
+    public void SetLeftHandFlex(float flex)
+    {
+        this.leftHand.anim.SetFloat("Flex", flex);
+    }
+    
+    [PunRPC]
+    public void SetRightHandFlex(float flex)
+    {
+        this.rightHand.anim.SetFloat("Flex", flex);
     }
 
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2362237291736939161}
   - component: {fileID: 9177517887979180964}
-  - component: {fileID: 9082034322273507471}
+  - component: {fileID: 6891004316472140452}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MonoBehaviour:
   anim: {fileID: 5346801513824118323}
   rig: {fileID: 4578343064195786106}
   side: 3
---- !u!114 &9082034322273507471
+--- !u!114 &6891004316472140452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,10 +59,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 129767330182410771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9f8ef0cb99ebf4ca48be72ff6ef82c, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &528577903502304492
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a895c9d998ffec744b5a8b6340fbbaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 8774185224345455482}
   hardwareRig: {fileID: 0}
   headset: {fileID: 6907166874821371714}
   leftHand: {fileID: 7355313145203433126}
@@ -137,10 +141,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2700379544279315864}
   - {fileID: 7442799251039013641}
-  - {fileID: 7355313145203433126}
-  - {fileID: 3970410791720368461}
-  - {fileID: 9177517887979180964}
-  - {fileID: 9082034322273507471}
+  - {fileID: 0}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -296,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6015552073432249128}
   - component: {fileID: 7355313145203433126}
-  - component: {fileID: 3970410791720368461}
+  - component: {fileID: 8708065469990355987}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -336,7 +338,7 @@ MonoBehaviour:
   anim: {fileID: 5485765363237573445}
   rig: {fileID: 4578343064195786106}
   side: 2
---- !u!114 &3970410791720368461
+--- !u!114 &8708065469990355987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,10 +347,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7403696579687089429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9f8ef0cb99ebf4ca48be72ff6ef82c, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &9084283368366994331
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,23 +4,11 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public interface IHandRepresentation
+public class NetworkHand : MonoBehaviourPun
 {
-    public void SetHandCommand(HandCommand command);
-    public GameObject gameObject { get; }
-    public void SetHandColor(Color color);
-    public void SetHandMaterial(Material material);
-    public void DisplayMesh(bool shouldDisplay);
-    public bool IsMeshDisplayed { get; }
-    public Material SharedHandMaterial { get; }
-
-}
-
-public class NetworkHand : MonoBehaviour, IPunObservable
-{
-    [SerializeField] private PhotonView photonView;
-    [SerializeField] private Animator anim;
-    [SerializeField] private NetworkRig rig;
+    public PhotonView photonView;
+    public Animator anim;
+    public NetworkRig rig;
     public RigPart side;
     
     private float receiveFlex;
@@ -37,31 +25,5 @@ public class NetworkHand : MonoBehaviour, IPunObservable
         
     }
 
-    private void Update()
-    {
-        if (!this.photonView.IsMine)
-        {
-            this.anim.SetFloat("Flex", this.receiveFlex);
-            this.anim.SetInteger("Pose", this.receivePose);
-            this.anim.SetFloat("Pinch", this.receivePinch);
-        }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(this.anim.GetFloat("Flex"));
-            stream.SendNext(this.anim.GetInteger("Pose"));
-            stream.SendNext(this.anim.GetFloat("Pinch"));
-        }
-        else
-        {
-            this.receiveFlex = (float)stream.ReceiveNext();
-            this.receivePose = (int)stream.ReceiveNext();
-            this.receivePinch = (float)stream.ReceiveNext();
-            
-            Debug.LogFormat("{0}, {1}, {2}", this.receiveFlex, this.receivePose, this.receivePinch);
-        }
-    }
+   
 }

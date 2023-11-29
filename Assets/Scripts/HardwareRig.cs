@@ -18,6 +18,8 @@ public class HardwareRig : MonoBehaviour
     public HardwareHand leftHand;
     public HardwareHand rightHand;
 
+    public NetworkRig networkRig;
+
     // Start is called before the first frame update
     void Start()
     {
