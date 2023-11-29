@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Oculus.Interaction;
@@ -8,26 +9,53 @@ using UnityEngine;
 public class NetworkGrabbable : MonoBehaviour, IPunOwnershipCallbacks
 {
     public InteractableUnityEventWrapper eventWrapper;
-    public PhotonView pv;    
+    public PhotonView pv;
+    private Rigidbody rBody;
+    [SerializeField]
+    private bool isPhysics = false;
+
+    private void Awake()
+    {
+        this.rBody = this.GetComponent<Rigidbody>();
+    }
+
     void Start()
     {
         this.eventWrapper.WhenSelect.AddListener(() =>
         {
             Debug.Log("<color=lime>Grab</color>");
             this.pv.RequestOwnership();
-        });    
+            if(isPhysics)
+                this.pv.RPC("WhenSelect", RpcTarget.Others, null);
+        });
         this.eventWrapper.WhenUnselect.AddListener(() =>
         {
             Debug.Log("<color=lime>UnGrab</color>");
+            if(isPhysics)
+                this.pv.RPC("WhenUnSelect", RpcTarget.Others, null);
         });
     }
+
     void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);
     }
+
     void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
+    }
+
+    [PunRPC]
+    void WhenSelect()
+    {
+        this.rBody.useGravity = false;
+    }
+
+    [PunRPC]
+    void WhenUnSelect()
+    {
+        this.rBody.useGravity = true;
     }
 
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
