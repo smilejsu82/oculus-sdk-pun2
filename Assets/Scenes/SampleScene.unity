@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 1082102023}
   - component: {fileID: 1082102026}
   - component: {fileID: 1082102025}
+  - component: {fileID: 1082102027}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -709,7 +710,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082102012}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -875,6 +876,22 @@ MonoBehaviour:
   eventWrapper: {fileID: 1082102025}
   pv: {fileID: 1082102024}
   isPhysics: 1
+--- !u!114 &1082102027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082102012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb09e4f18fd0954796cd0b766d28fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yThresholdForRespawn: 0.1
+  _whenRespawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1165359381
 PrefabInstance:
   m_ObjectHideFlags: 0
